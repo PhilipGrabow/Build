@@ -1,0 +1,172 @@
+name: BuildcraftPrivat
+version: 1.9.0.7
+author: brainstorm3de
+description: Vielseitiges Plugin, kann Admins helfen, macht Spass und Freude mit MySQL-Unterstuetzung
+
+main: de.philipgrabow.build.Main
+
+commands:
+  blind:
+    description: Macht dich Blind
+    usage: /<command> [player]
+  sprung:
+    description: Verleiht dir Sprungkraft
+    usage: /<command> [player]
+  heal:
+    description: Heilt dich
+    usage: /<command>
+  hunger:
+    description: Du musst Hungern
+    usage: /<command>
+  information:
+    description: Gibt Informationen ueber dich
+    usage: /<command> [player]
+  potion:
+    description: Der Spieler kann Auswaehlen welchen Effekt er haben will
+    usage: /<command> [EffectID]
+  status:
+    description: Gibt Spieler Infos ueber sich
+    usage: /<command>
+  time:
+    description: Stellt die Zeit ein
+    usage: /<command> [day|night]
+  hilfe:
+    description: Zeigt die Hilfe an
+    usage: /<command>
+  bcp:
+    description: Haupt-Command
+    usage: /<command> [ID]
+  warn:
+    description: Simply Warn Command
+    usage: /<command> [Name] [Reason]
+  scoreboard:
+    description: Schaltet das Scoreboard aus und ein
+    usage: /<command> [on|off]
+  setmotd:
+    description: aendert den Serverlisten MOTD
+    usage: /<command> [motd]
+  motd:
+    description: Schaltet den Motd von BuildcraftPrivat ein und aus
+    usage: /<command> [on|off]
+  UUID:
+    description: Zeigt dir deine UUID an
+    usage: /<command> [player]
+  op:
+    description: Op-Rechte setzen
+    usage: /<command> [player]
+  onlinetime:
+    description: 
+    usage: /<command> [add|set] [..]
+  godmode:
+    description:
+    usage: /<command>
+    
+
+permissions:
+  bcp.*:
+    children:
+      - bcp.blind.self: op
+      - bcp.blind.other: op
+      - bcp.sprung: op
+      - bcp.heal.self: op
+      - bcp.heal.other: op
+      - bcp.heal.all: op
+      - bcp.hunger: op
+      - bcp.information.self: op
+      - bcp.information.other: op
+      - bcp.kick.s: op
+      - bcp.kick.other: op
+      - bcp.potion.0: op
+      - bcp.potion.1: op
+      - bcp.potion.2: op
+      - bcp.potion.3: op
+      - bcp.potion.4: op
+      - bcp.potion.5: op
+      - bcp.potion.6: op
+      - bcp.potion.7: op
+      - bcp.status: op
+      - bcp.time.list: op
+      - bcp.time.day: op
+      - bcp.time.night: op
+      - bcp.help.list: op
+      - bcp.fly.self: op
+      - bcp.fly.other: op
+      - bcp.bcp: op
+      - bcp.reload: op
+      - bcp.renew: op
+      - bcp.update: op
+      - bcp.motd.enabled: op
+      - bcp.setmotd.text: op
+      - bcp.scoreboard.enabled: op
+      - bcp.scoreboard.clearall: op
+      - bcp.scoreboard.clear: op
+      - bcp.op: op
+      - bcp.godmode: op
+  bcp.kick.*:
+    children:
+      - bcp.kick.s: op
+      - bcp.kick.other: op
+  bcp.potion.*:
+    children:
+      - bcp.potion.0: op
+      - bcp.potion.1: op
+      - bcp.potion.2: op
+      - bcp.potion.3: op
+      - bcp.potion.4: op
+      - bcp.potion.5: op
+      - bcp.potion.6: op
+      - bcp.potion.7: op
+  bcp.status.*:
+    children:
+      - bcp.status: op
+  bcp.time.*:
+    children:
+      - bcp.time.list: op
+      - bcp.time.day: op
+      - bcp.time.night: op
+  bcp.help.*:
+    children:
+      - bcp.help.list: op
+  bcp.fly.*:
+    children:
+      - bcp.fly.self: op
+      - bcp.fly.other: op
+  bcp.blind.*:
+    children:
+      - bcp.blind.self: op
+      - bcp.blind.other: op
+  bcp.sprung.*:
+    children:
+      - bcp.sprung: op
+  bcp.heal.*:
+    children:
+      - bcp.heal.self: op
+      - bcp.heal.other: op
+      - bcp.heal.all: op
+  bcp.hunger.*:
+    children:
+      - bcp.hunger: op
+  bcp.information.*:
+    children:
+      - bcp.information.self: op
+      - bcp.information.other: op
+  bcp.bcp.*:
+    children:
+      - bcp.bcp: op
+      - bcp.reload: op
+      - bcp.renew: op
+      - bcp.update: op
+  bcp.setmotd.*:
+    children:
+      - bcp.setmotd.text: op
+  bcp.motd.*:
+    children:
+      - bcp.motd.enabled: op
+  bcp.scoreboard.*:
+    children:
+      - bcp.scoreboard.enabled: op
+      - bcp.scoreboard.clearall: op
+      - bcp.scoreboard.clear: op
+  bcp.op.*:
+    children:
+      - bcp.op: op
