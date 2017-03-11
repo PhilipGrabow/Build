@@ -51,9 +51,6 @@ commands:
   UUID:
     description: Zeigt dir deine UUID an
     usage: /<command> [player]
-  op:
-    description: Op-Rechte setzen
-    usage: /<command> [player]
   onlinetime:
     description: 
     usage: /<command> [add|set] [..]
