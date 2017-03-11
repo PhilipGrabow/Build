@@ -412,7 +412,6 @@ public class Main extends JavaPlugin implements Listener ,CommandExecutor{
 		String KeepXPDeathMessage = "BCP.Death.KeepXP.DeathMessage";
 		getConfig().addDefault(KeepXPDeathMessage, "&2 %p% &bdu bist gestorben hast aber deine XP-Level behalten!!");
 		
-		getConfig().addDefault("AutoRank.Enabled", false);
 		//
 		FileConfiguration cfg = this.getConfig();
 		cfg.options().copyDefaults(true);
