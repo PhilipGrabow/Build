@@ -33,6 +33,9 @@ public class OnlineTime implements Listener {
 		FileConfiguration configcfg = YamlConfiguration.loadConfiguration(config);
 		//Aktualsierungsrate für die OnlineZeit
 		//Von 1-90........Minuten!!!
+		if(cfg.contains("OnlineTime." + e.getPlayer().getName()) == false) {
+			cfg.set("OnlineTime." + e.getPlayer().getName(), 0);
+		}
 		final int akturate = configcfg.getInt("OnlineTime.Aktualisierungsrate");
 		if(cfg.getInt("OnlineTime." + e.getPlayer().getName()) >=60) {
 			e.getPlayer().sendMessage("§bDeine OnlineZeit beträgt zurzeit : " + cfg.getDouble("OnlineTime." + e.getPlayer().getName())/60 + " Stunde/n !");

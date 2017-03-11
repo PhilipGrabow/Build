@@ -41,7 +41,6 @@ import de.philipgrabow.executor.HungerCommand;
 import de.philipgrabow.executor.Info;
 import de.philipgrabow.executor.MainCommand;
 import de.philipgrabow.executor.OnlineTimeCommand;
-import de.philipgrabow.executor.OpCommand;
 import de.philipgrabow.executor.PotionCommand;
 import de.philipgrabow.executor.SprungCommand;
 import de.philipgrabow.executor.StatusCommand;
@@ -174,7 +173,6 @@ public class Main extends JavaPlugin implements Listener ,CommandExecutor{
 		getCommand("setmotd").setExecutor(new PingList(this));
 		getCommand("motd").setExecutor(new PingList(this));
 		getCommand("UUID").setExecutor(new UUIDCommand(this));
-		getCommand("op").setExecutor(new OpCommand(this));
 		getCommand("onlinetime").setExecutor(new OnlineTimeCommand());
 		getCommand("godmode").setExecutor(new GodwithNightVisionMode());
 		//Files

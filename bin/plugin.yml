@@ -97,7 +97,6 @@ permissions:
       - bcp.scoreboard.enabled: op
       - bcp.scoreboard.clearall: op
       - bcp.scoreboard.clear: op
-      - bcp.op: op
       - bcp.godmode: op
   bcp.kick.*:
     children:
@@ -164,6 +163,3 @@ permissions:
       - bcp.scoreboard.enabled: op
       - bcp.scoreboard.clearall: op
       - bcp.scoreboard.clear: op
-  bcp.op.*:
-    children:
-      - bcp.op: op
