@@ -25,12 +25,13 @@ public class ScoreboardListener implements Listener {
 	public void onPlayerDeathEvent (PlayerDeathEvent e) throws IOException {
 		Player toter = e.getEntity();
 		Score.addDeath(toter);
-		Score.createScoreboard(toter);
 		 
 		 if ((e.getEntity().getKiller() instanceof Player)) {
 			 Player killer = (Player) e.getEntity().getKiller();
 			 Score.addKill(killer);
-			 Score.createScoreboard(killer);
+			 for (Player p: e.getEntity().getServer().getOnlinePlayers()) {
+					Score.createScoreboard(p);
+				}
 		 }
 	}
 	@EventHandler (priority = EventPriority.NORMAL)
@@ -43,15 +44,14 @@ public class ScoreboardListener implements Listener {
 			}
 		}
 		else if (e.getPlayer().isOp()== true) {
-		e.getPlayer().sendMessage(ChatColor.RED +"ï¿½lDu hast die Mï¿½glichkeit in der Config von Buildcraftprivat das Scoreboard zu aktivieren!");
+		e.getPlayer().sendMessage(ChatColor.RED +"Du hast die Möglichkeit in der Config von Buildcraftprivat das Scoreboard zu aktivieren!");
 		}
 	}
 	@EventHandler (priority = EventPriority.NORMAL)
 	public void onLeave(PlayerQuitEvent e1) {
 		plugin.reloadConfig();
 		if(plugin.getConfig().getBoolean("BCP.Scoreboard.Enabled") == true) {
-			Collection<? extends Player> players = e1.getPlayer().getServer().getOnlinePlayers();
-			for (Player p: players) {
+			for (Player p: e1.getPlayer().getServer().getOnlinePlayers()) {
 				Score.createScoreboard(p);
 			}
 			

@@ -31,17 +31,20 @@ public class Score implements Listener{
 		String drei = cfg.getString("Scoreboard.Scores.3");
 		String vier = cfg.getString("Scoreboard.Scores.4");
 		String fünf = cfg.getString("Scoreboard.Scores.5");
+		String sechs = "ON-Zeit:";
 //		String sechs = cfg.getString("Scoreboard.Scores.6");
 		org.bukkit.scoreboard.Score kills = score.getScore(eins);
 		org.bukkit.scoreboard.Score deaths = score.getScore(zwei);
 		org.bukkit.scoreboard.Score kdr = score.getScore(drei);
 		org.bukkit.scoreboard.Score Max = score.getScore(vier);
 		org.bukkit.scoreboard.Score Online = score.getScore(fünf);
+		org.bukkit.scoreboard.Score onlinetime = score.getScore(sechs);
 //		org.bukkit.scoreboard.Score OnlineTime = score.getScore(sechs);
 		int onlineplayer = Bukkit.getOnlinePlayers().size();
+		File playerfile = new File("plugins/BuildcraftPrivat/PlayerOnlineTime", "OnlineTimes.yml");
 //		File playerfile = new File("plugins/BuildcraftPrivat/PlayerOnlineTime", "OnlineTimes.yml");
-//		FileConfiguration ccfg = YamlConfiguration.loadConfiguration(playerfile);
-//		int OnlineTimePlayer = ccfg.getInt(player.getName());
+		FileConfiguration ccfg = YamlConfiguration.loadConfiguration(playerfile);
+		int OnlineTimePlayer = ccfg.getInt("OnlineTime." + player.getName());
 		int maxplayer = Bukkit.getMaxPlayers();
 		int killss = Score.getKills(player);
 		int deathss = Score.getDeaths(player);
@@ -56,7 +59,8 @@ public class Score implements Listener{
 		deaths.setScore(Score.getDeaths(player));
 		Max.setScore(maxplayer);
 		Online.setScore(onlineplayer);
-//		OnlineTime.setScore(OnlineTimePlayer);
+//		onlinetime.setScore(arg0);
+		onlinetime.setScore(OnlineTimePlayer);
 		//Scoreboard gesetzt
 		player.setScoreboard(board);
 	}
