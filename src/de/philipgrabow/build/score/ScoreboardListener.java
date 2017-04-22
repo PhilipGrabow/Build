@@ -1,7 +1,6 @@
 package de.philipgrabow.build.score;
 
 import java.io.IOException;
-import java.util.Collection;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
