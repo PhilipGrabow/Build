@@ -251,8 +251,8 @@ public class Main extends JavaPlugin implements Listener, CommandExecutor {
 			} catch (MySQLIntegrityConstraintViolationException e) {
 				e.printStackTrace();
 			}
-			System.out.println("[" + getDescription().getFullName() + "]" + " enabled!");
 		}
+		System.out.println("[" + getDescription().getFullName() + "]" + " enabled!");
 	}
 
 	@EventHandler(priority = EventPriority.NORMAL)
